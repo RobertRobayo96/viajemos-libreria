@@ -1,0 +1,99 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large" style ="text-align: center;">
+    <h1><i class="fas fa-portrait"></i>  Gestión de Autores </h1>
+    <ul class="uk-breadcrumb">
+        <li><a routerLink="/">Inicio</a></li>
+      <li><a>Autores</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="uk-section-small fondo" *ngIf="autores != 0">
+  <div class="uk-container uk-container-large">
+    <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-4@xl">
+      <div class="uk-width-expand">
+        <div class="uk-card uk-card-default uk-card-body">
+
+          <nav class="uk-navbar-container searchinput" uk-navbar>
+            <div class="uk-navbar-left">
+              <div class="uk-navbar-item">
+                <div class="uk-search uk-search-navbar">
+                  <span uk-search-icon></span>
+                  <input class="uk-search-input" type="text" [(ngModel)]="buscar" placeholder="Buscar...">
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <hr/>
+
+          <div class="uk-overflow-auto">
+
+            <table class="uk-table uk-table-striped anchos">
+
+              <tbody>
+
+                <tr>
+                  
+                  <th>Nombres</th>
+                  <th>Apellidos </th>
+                  <th>Actualizar</th>
+                  <th>Eliminar</th>
+                </tr>
+
+                <tr *ngFor="let autor of autores | filter : buscar | paginate: { itemsPerPage: 5, currentPage: p}">
+                  
+                  <td>{{autor.nombres}}</td>
+                  <td>{{autor.apellidos}}</td>
+
+                  <td><button class="uk-button uk-button-primary" routerLink="/autor/editar/{{autor.id}}"><i class="fas fa-pencil-alt" ></i></button></td>
+                  <td><button class="uk-button uk-button-danger" (click)="delete(autor.id)"><i class="fas fa-trash"></i></button></td>
+              
+                </tr>
+
+              </tbody>
+
+            </table>
+
+            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"> </pagination-controls>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="uk-section-small" *ngIf="autores == 0">
+  <div class="uk-container uk-container-large">
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+
+              <div uk-alert>
+                  <h2>No hay datos registrados<i class="fas fa-table"></i></h2>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div >
+  <button class="float-button"  routerLink="/autor/agregar">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>
+
+
+<div *ngIf="autores.length == 5">
+  <button class="float-button" style="background-color: black">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>
+
+
+
+

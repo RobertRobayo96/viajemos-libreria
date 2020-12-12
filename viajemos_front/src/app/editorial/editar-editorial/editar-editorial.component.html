@@ -1,0 +1,39 @@
+<div class="uk-section-small uk-section-default header  ">
+  <div class="uk-container uk-container-large">
+    <h1>Registro de Promociones</h1>
+    <ul class="uk-breadcrumb">
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/promotion">Promociones</a></li>
+      <li>Actualización de Datos</li>
+    </ul>
+  </div>
+</div>
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <form class="uk-grid-small" uk-grid [formGroup]="form" (ngSubmit)="edit()">
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Nombre</label>
+            <input class="uk-input" type="text" formControlName="nombre" [(ngModel)]="editorial.nombre">
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Sede</label>
+            <input class="uk-input" type="text" formControlName="sede" [(ngModel)]="editorial.sede">
+          </div>
+
+          <div class="uk-width-1-1@s">
+            <div class="uk-margin uk-text-center">
+              <button class="uk-button uk-button-default uk-modal-close" type="button"
+                routerLink="/editorial">Cancelar</button>
+              <button type="submit" class="uk-button uk-button-primary" [disabled]="!formulario.valid">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

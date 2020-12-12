@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parking</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+    </head>
+    <body style="background: url('https://anhsangvacuocsong.vn/wp-content/uploads/2016/08/bglogin.jpg'); background-size: cover;">
+        
+        <div class="content-background">
+            <div class="uk-section-large">
+                <div class="uk-container uk-container-large">
+                    <div uk-grid class="uk-child-width-1-1@s uk-child-width-2-3@l">
+                        <div class="uk-width-1-1@s uk-width-1-5@l uk-width-1-3@xl"></div>
+                        <div class="uk-width-1-1@s uk-width-3-5@l uk-width-1-3@xl">
+
+                            <div class="outer">
+                            <div class="middle">
+                            <div class="uk-card uk-card-default inner" id="rcorner">
+                                <div class="uk-card-header uk-flex uk-flex-center">
+                                    <!-- <img src="https://co.nec.com/nf_global/v3/common/img/site/header-img.png" /> -->
+                                </div>
+                                <div class="uk-card-body">
+                                        <h3 style="text-align: center; width=250px; height=200px;">
+                                            <img src="assets/img/parking-logo_old.jpg">
+                                        </h3>
+                                        <h3 style="text-align: center" >Bellpi Parking</h3>
+                                    <form [formGroup]="data" (ngSubmit)="register()">
+                                       
+
+                                            <div class="uk-margin">
+                                                <div class="uk-position-relative">
+                                                    <label class="uk-form-icon" uk-icon="icon: mail"></label>
+                                                    <input formControlName="email" class="uk-input" type="email" placeholder="Correo">
+                                                </div>
+                                            </div>
+
+                                           <div class="uk-margin">
+                                                <div class="uk-position-relative">
+                                                    <label class="uk-form-icon" uk-icon="icon: lock"></label>
+                                                    <input formControlName="password" class="uk-input" type="password" placeholder="Contraseña">
+                                                </div>
+                                            </div> 
+
+                                            <div class="uk-margin uk-flex uk-flex-center">
+                                                <button type="submit" class="uk-button uk-button-primary" [disabled]="!data.valid">
+                                                    <span class="ion-forward"></span><i class="fas fa-lock"></i>&nbsp; Iniciar Sesión                                                 </button>
+                                            </div>
+                                            
+
+                                   
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+
+
+                        </div>
+                        <div class="uk-width-1-1@s uk-width-1-5@l uk-width-1-3@xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

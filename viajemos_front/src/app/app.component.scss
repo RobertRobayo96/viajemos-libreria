@@ -1,0 +1,118 @@
+:host ::ng-deep{
+.user{
+    text-align:center;
+    padding-bottom: 20px;
+}
+
+
+.navbar-filter{
+    background: #f8f8f8 !important;
+}
+
+//Table
+
+thead{
+    background: #999;
+    tr{
+        th{
+            color: #fff;
+        }
+    }
+}
+
+textarea { resize: vertical; } 
+.inputfile{
+    border: dashed 2px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.uk-form-custom{
+    width: 100%;
+}
+
+.submitbutton{
+    width: 50%;
+    margin-top: 20px;
+}
+
+#floating-button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    p{
+        position: absolute;
+        top: 0;
+        display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        line-height: 55px;
+        font-family: 'Roboto';
+        font-weight: 300;
+        animation: plus-out 0.3s;
+        transition: all 0.3s;
+    }
+}
+
+.searchinput{
+    background: #e6e6e6 !important;
+}
+
+.float-button{
+    position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#002b62;
+	color:#FFF;
+	border-radius:50px;
+    text-align:center;
+    border: none;
+    cursor: pointer;
+    i{
+        font-size:24px;
+    }
+}
+
+.plus-circle{
+    padding: 30px;
+    color: white !important;
+    background-color: #002b62;
+    border-radius: 50%;
+    border: 1x solid #000000;
+    font-size: 65px;
+    margin-left: -35px;
+}
+
+.ngx-pagination{
+    text-align: center;
+    .current{
+        padding: 10px;
+    }
+    a{
+        padding: 10px;
+    }
+    .pagination-previous{
+        padding: 10px;
+    }
+    .pagination-next{
+        padding: 10px;
+    }
+}
+
+.width-100{width: 100% !important;}
+.width-80{width: 80% !important;}
+.width-50{width: 50% !important;}
+
+//End Table
+
+}

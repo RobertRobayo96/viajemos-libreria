@@ -1,0 +1,38 @@
+<div class="uk-section-small uk-section-default header  ">
+  <div class="uk-container uk-container-large" style="text-align: center;">
+    <h1>Registro Cliente</h1>
+    <ul class="uk-breadcrumb">
+
+    </ul>
+  </div>
+</div>
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <form class="uk-grid-small" uk-grid [formGroup]="form" (ngSubmit)="insert()">
+
+
+        <div class="uk-width-1-2@s">
+          <label class="uk-form-label" for="form-stacked-text">Nombre </label>
+          <input class="uk-input" placeholder="" formControlName="nombre">
+        </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Sede </label>
+            <input class="uk-input" placeholder="" formControlName="sede">
+          </div>
+  
+         
+  
+        <div class="uk-width-1-1@s" style="text-align: center">
+          <a routerLink="/editorial"><button type="button" class="uk-button uk-button-default">Cancelar</button></a>
+          <button type="type" class="uk-button uk-button-primary"
+              [disabled]="!form.valid">Guardar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

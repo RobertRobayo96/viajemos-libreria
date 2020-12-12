@@ -1,0 +1,120 @@
+<div class="uk-section-small uk-section-default header">
+  <div class="uk-container uk-container-large" style="text-align: center;">
+    <h1><i class="fas fa-book"></i>  Control de Libros</h1>
+    <ul class="uk-breadcrumb">
+        <li><a routerLink="/">Inicio</a></li>
+      <li><a>Libros</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="uk-section-small">
+  <div class="uk-container uk-container-large">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <form class="uk-grid-small" uk-grid [formGroup]="form" (ngSubmit)="edit()">
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Selecciona Editoriales</label>
+            <input class="uk-input" type="text" value="{{libro.editorial.nombre}}" disabled>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Titulo</label>
+            <input class="uk-input" type="text" value="{{libro.titulo}}" disabled>
+          </div>
+
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Sinopsis</label>
+            <textarea class="uk-input" type="text" value="{{libro.sinopsis}}" disabled></textarea>
+          </div>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="form-stacked-text">Nro. Páginas</label>
+            <input class="uk-input" type="text" value="{{libro.n_paginas}}" disabled>
+          </div>
+
+
+          <div class="uk-width-1-1@s">
+            <div class="uk-margin uk-text-center">
+              <button class="uk-button uk-button-default uk-modal-close" type="button"
+                routerLink="/libro">Cancelar</button>
+              <button type="submit" class="uk-button uk-button-primary" [disabled]="!formulario.valid">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="uk-section-small fondo" *ngIf="autoresPorLibro != 0">
+  <div class="uk-container uk-container-large">
+    <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-4@xl">
+      <div class="uk-width-expand">
+        <div class="uk-card uk-card-default uk-card-body">
+
+          <nav class="uk-navbar-container searchinput" uk-navbar>
+            <div class="uk-navbar-left">
+              <div class="uk-navbar-item">
+                <div class="uk-search uk-search-navbar">
+                  <span uk-search-icon></span>
+                  <input class="uk-search-input" type="text" [(ngModel)]="buscar" placeholder="Buscar...">
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <hr/>
+
+          <div class="uk-overflow-auto">
+
+            <table class="uk-table uk-table-striped anchos">
+
+              <tbody>
+
+                <tr>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Eliminar</th>
+                </tr>
+
+                <tr *ngFor="let autor of autoresPorLibro | filter : buscar | paginate: { itemsPerPage: 5, currentPage: p}">
+                  <td>{{autor.autor.nombres}}</td>
+                  <td>{{autor.autor.apellidos}}</td>
+
+                  <td><button class="uk-button uk-button-danger" (click)="delete(lib.id)"><i class="fas fa-trash"></i></button></td>
+              
+                </tr>
+
+              </tbody>
+
+            </table>
+
+            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"> </pagination-controls>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="uk-section-small" *ngIf="libros == 0">
+  <div class="uk-container uk-container-large">
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+
+              <div uk-alert>
+                  <h2>No hay datos registrados<i class="fas fa-table"></i></h2>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+

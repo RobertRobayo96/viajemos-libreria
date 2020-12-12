@@ -1,0 +1,39 @@
+<div uk-sticky class="uk-navbar-container tm-navbar-container uk-active">
+   <div class="uk-container uk-container-expand">
+      <nav uk-navbar>
+         <div class="uk-navbar-left">
+            <a id="sidebar_toggle" class="uk-navbar-toggle" uk-navbar-toggle-icon></a>
+            <a routerLink="" class="uk-navbar-item uk-logo">
+               <img id="avatar" width="50" src="assets/img/logo.png" />
+            </a>
+         </div>
+         <div class="uk-navbar-right uk-light">
+
+            <button uk-icon="icon: bell; ratio: 1.1" class="uk-inline"></button>   
+            <div uk-dropdown="mode: click"  style="width:280px; height:300px; overflow:auto">
+                  <ul>
+                     <li>
+          
+                     </li>
+                  </ul>
+               </div>
+
+            <ul class="uk-navbar-nav">
+               <li class="uk-active">
+                   <a href="#">
+                      <strong style="margin-right: 10px;" class="uk-titulo">Bienvenido {{userinfo.nombre}} {{userinfo.apellido}}</strong>
+                      
+                     <span uk-icon="chevron-down"></span>
+                   </a>
+                  <div uk-dropdown="pos: bottom-right; mode: click; offset: -17;">
+                     <ul class="uk-nav uk-navbar-dropdown-nav">
+                     <li class="uk-nav-header">Acciones de usuario</li>
+                        <li><a (click)="logout()"><span class="uk-margin-small-right" uk-icon="icon: sign-out; ratio: 0.9"></span>Cerrar sesión</a></li>
+                     </ul>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   </div>
+</div>
